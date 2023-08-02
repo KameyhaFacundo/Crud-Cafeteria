@@ -1,0 +1,20 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precio": 300,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
+      "descripcion": "Buen cafecito",
+      "id": 1
+    },
+    {
+      "nombreProducto": "té",
+      "precio": 250,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/6154065/pexels-photo-6154065.jpeg",
+      "descripcion": "Buen te de manzana",
+      "id": 2
+    }
+  ]
+}
