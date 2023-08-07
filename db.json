@@ -16,5 +16,13 @@
       "descripcion": "Buen te de manzana",
       "id": 2
     }
+  ],
+  "usuarios": [
+    {
+      "nombreUsuario": "Admin",
+      "email": "admin@rolling.com",
+      "password": "123456aA",
+      "id": 1
+    }
   ]
 }
