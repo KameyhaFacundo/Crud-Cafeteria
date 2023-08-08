@@ -8,9 +8,9 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  //Pide loguear al usuario
-  const onSubmit = () => {
+  const onSubmit = (usuario) => {
     console.log("Aqui agrego una logica");
+    console.log(usuario);
   };
 
   return (
@@ -34,25 +34,28 @@ const Login = () => {
                   },
                 })}
               />
-              <Form.text className="text-danger">
+              <Form.Text className="text-danger">
                 {errors.email?.message}
-              </Form.text>
+              </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-              {...register("password", {
-                required: "El password es un dato obligatorio",
-                pattern: {
-                  value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-                  message:
-                    "La password debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
-                },
-              })}
-              <Form.text className="text-danger">
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                {...register("password", {
+                  required: "El password es un dato obligatorio",
+                  pattern: {
+                    value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+                    message:
+                      "La password debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger">
                 {errors.password?.message}
-              </Form.text>
+              </Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
               Ingresar
