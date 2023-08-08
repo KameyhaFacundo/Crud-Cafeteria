@@ -3,7 +3,7 @@ export const login = async (usuario) => {
   try {
     //Pedir la lista de usuarios a json-server
     const respuesta = await fetch(" http://localhost:3004/usuarios");
-    const listaUsuarios = respuesta.json();
+    const listaUsuarios = await respuesta.json();
 
     //Buscar si el usuario existe
     const usuarioBuscado = listaUsuarios.find(
