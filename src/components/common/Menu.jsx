@@ -1,21 +1,21 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const Menu = ({ usuarioActivo, setUsuarioActivo }) => {
   const navegacion = useNavigate();
 
   const logout = () => {
-    //limpiamos el estado y el sessionStoage
+    // limpiamos el stado y el sessionStorage
     setUsuarioActivo({});
     sessionStorage.removeItem("usuarioLogueado");
-    // redirecciona a la pagina principal
+    //redirecciona a la pagina principal
     navegacion("/");
   };
 
   return (
     <Navbar bg="danger" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to={"/"}>
           Cafecito
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,7 +27,7 @@ const Menu = ({ usuarioActivo, setUsuarioActivo }) => {
             <NavLink end to="/registro" className="nav-link">
               Registro
             </NavLink>
-            {/* aqui pregunto si usuario activo tiene una propiedad guardada , cualquiera*/}
+            {/* aqui pregunto si usuarioActivo tiene una propiedad guardada, cualquiera */}
             {usuarioActivo.email ? (
               <>
                 <NavLink end to="/administrador" className="nav-link">
